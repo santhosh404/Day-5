@@ -151,7 +151,6 @@ const santhoshResume = {
                 "React Router", 
                 "Express.js", 
                 "JWT", 
-                "Formik", 
                 "HTML",
                 "Formik", 
                 "MongoDB"
@@ -171,7 +170,6 @@ const santhoshResume = {
                 "React Router", 
                 "Express.js", 
                 "JWT", 
-                "Formik", 
                 "HTML",
                 "Formik", 
                 "MongoDB"
@@ -214,8 +212,120 @@ const santhoshResume = {
     "signature": "https://path-to-signature.com"
 }
 
-console.log(santhoshResume);
+console.log("Resume in JSON", santhoshResume);
 
 
 
-//* Task 2: Iterate over 
+//* Task 2: Iterate over the above JSON using all for loops
+
+
+        //* Using For Loop
+
+        console.log("Using For Loop");
+        
+        function iterateObjectUsingForLoop(object) {
+
+            const keys = Object.keys(object);
+
+            //Using for loop
+            for (let i = 0; i < keys.length; i++) {
+                const key = keys[i];
+
+                //Making the recursive function call to print the nested object as key : value, if the received current element is object
+                if (typeof object[key] === 'object') {
+                    console.log(`${key}: `);
+                    iterateObjectUsingForLoop(object[key]); 
+                } 
+
+                //If current element is not an object, then priting the key: value
+                else {
+                    console.log(`${key}: ${object[key]}`);
+                }
+            }
+        }
+
+        console.log(iterateObjectUsingForLoop(santhoshResume));
+
+
+
+
+
+        //* Using For in Loop
+        
+        console.log("Using For In Loop");
+
+        function iterateObjectUsingForInLoop(object) {
+
+            //Using for...in Loop
+            for(let key in object) {
+
+                //Making the recursive function call to print the nested object as key : value, if the received current element is object
+                if (typeof object[key] === 'object') {
+                    console.log(`${key}: `);
+                    iterateObjectUsingForLoop(object[key]); 
+                } 
+                
+                //If current element is not an object, then priting the key: value
+                else {
+                    console.log(`${key}: ${object[key]}`);
+                }
+            }
+        }
+
+        console.log(iterateObjectUsingForInLoop(santhoshResume));
+
+
+
+
+
+        //* Using For of Loop
+    
+        console.log("Using For Of Loop");
+
+        function iterateObjectUsingForOfLoop(object) {
+
+            //Using for...of Loop
+            for(let key of Object.keys(object)) {
+
+                //Making the recursive function call to print the nested object as key : value, if the received current element is object
+                if (typeof object[key] === 'object') {
+                    console.log(`${key}: `);
+                    iterateObjectUsingForLoop(object[key]); 
+                } 
+                
+                //If current element is not an object, then priting the key: value
+                else {
+                    console.log(`${key}: ${object[key]}`);
+                }
+            }
+        }
+
+        console.log(iterateObjectUsingForOfLoop(santhoshResume));
+
+
+
+
+
+        //* Using For of Loop
+    
+        console.log("Using forEach Loop");
+
+        function iterateObjectUsingForEachLoop(object) {
+
+            //Using forEach Loop
+            Object.entries(object).forEach(([key, value], index) => {
+
+                //Making the recursive function call to print the nested object as key : value, if the received current element is object
+                if (typeof object[key] === 'object') {
+                    console.log(`${key}: `);
+                    iterateObjectUsingForLoop(object[key]); 
+                } 
+                
+                //If current element is not an object, then priting the key: value
+                else {
+                    console.log(`${key}: ${object[key]}`);
+                }
+            })
+        }
+
+        console.log(iterateObjectUsingForEachLoop(santhoshResume));
