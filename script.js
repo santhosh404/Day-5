@@ -262,7 +262,7 @@ console.log("Resume in JSON", santhoshResume);
                 //Making the recursive function call to print the nested object as key : value, if the received current element is object
                 if (typeof object[key] === 'object') {
                     console.log(`${key}: `);
-                    iterateObjectUsingForLoop(object[key]); 
+                    iterateObjectUsingForInLoop(object[key]); 
                 } 
                 
                 //If current element is not an object, then priting the key: value
@@ -290,7 +290,7 @@ console.log("Resume in JSON", santhoshResume);
                 //Making the recursive function call to print the nested object as key : value, if the received current element is object
                 if (typeof object[key] === 'object') {
                     console.log(`${key}: `);
-                    iterateObjectUsingForLoop(object[key]); 
+                    iterateObjectUsingForOfLoop(object[key]); 
                 } 
                 
                 //If current element is not an object, then priting the key: value
@@ -306,7 +306,7 @@ console.log("Resume in JSON", santhoshResume);
 
 
 
-        //* Using For of Loop
+        //* Using forEach Loop
     
         console.log("Using forEach Loop");
 
@@ -318,7 +318,7 @@ console.log("Resume in JSON", santhoshResume);
                 //Making the recursive function call to print the nested object as key : value, if the received current element is object
                 if (typeof object[key] === 'object') {
                     console.log(`${key}: `);
-                    iterateObjectUsingForLoop(object[key]); 
+                    iterateObjectUsingForEachLoop(object[key]); 
                 } 
                 
                 //If current element is not an object, then priting the key: value
